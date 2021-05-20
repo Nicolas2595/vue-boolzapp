@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/style.css">
+        <title>Boolzapp</title>
+    </head>
+    <body>
+        
+        <div id="app">
+
+            <!-- // Inizio Sfondo -->
+            <div id="sfondo">
+
+                <div id="top_green"></div>
+
+                <div id="background" class="flex"></div>
+
+            </div>
+           <!-- // Fine sfondo -->
+
+           <!-- // Inizio app container -->
+            <div id="app_container" class="flex">
+
+                <!-- // Inizio left container -->
+                <div id="app_container_left" class="flex">
+
+                    <!-- // Inizio header left -->
+                    <div class="header_left flex center-align">
+                        <div class=" header_title flex center-align">
+                            <img src="img/avatar_1.jpg" alt="">
+                            <h3>Nome utente</h3>
+                        </div>
+                        <div class="header_i flex center-align">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>  
+                        </div>  
+                    </div>
+                    <!-- Fine header left -->
+
+                    <!-- Inizio notification -->
+                    <div id="app_notification_left" class="flex center-align">
+                        <div class="notification_i">
+                            <i id="bell" class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="notification_a">
+                            <h5>Ricevi notifiche di nuovi messaggi</h5>
+                            <a href="">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <!-- Fine notification -->
+
+                    <!-- Inizio search -->
+                    <div id="app_search_left" class="flex center-align">
+                        <input id="input_search"  type="text" placeholder="🔎 Cerca o inizia una nuova chat">
+                    </div>
+                    <!-- Fine search -->
+
+                    <!-- Inizio contact -->
+                        <div class="people">
+
+                            <div class="contact_chat active">
+            
+                                <img src="img/avatar_1.jpg" alt="Avatar Michele">
+            
+                                <div class="contact_chat_user">
+                                    <h4>Michele</h4>
+                                    <p>Tutto fatto! ...</p>
+                                </div>
+            
+                                <div>
+                                    <p>20/05/2021 15:00</p>
+                                </div>
+            
+                            </div>
+            
+                            <div class="contact_chat">
+            
+                                <img src="img/avatar_2.jpg" alt="Avatar Fabio">
+            
+                                <div class="contact_chat_user">
+                                    <h4>Fabio</h4>
+                                    <p>Mi piacerebbe ma devo andare a ...</p>
+                                </div>
+            
+                                <div>
+                                    <p>20/05/2021 15:00</p>
+                                </div>
+            
+                            </div>
+            
+                            <div class="contact_chat">
+            
+                                <img src="img/avatar_3.jpg" alt="Avatar Samuele">
+            
+                                <div class="contact_chat_user">
+                                    <h4>Samuele</h4>
+                                    <p>Ah scusa! ...</p>
+                                </div>
+            
+                                <div>
+                                    <p>20/05/2021 15:00</p>
+                                </div>
+            
+                            </div>
+                            <div class="contact_chat">
+            
+                                <img src="img/avatar_6.jpg" alt="Avatar Luisa">
+            
+                                <div class="contact_chat_user">
+                                    <h4>Luisa</h4>
+                                    <p>Si, ma preferirei andare al ci ...</p>
+                                </div>
+            
+                                <div>
+                                    <p>20/05/2021 15:00</p>
+                                </div>
+            
+                            </div>
+            
+                        </div>
+                    <!-- Fine contact -->
+
+                </div>    
+                <!-- // Fine left container -->
+                 
+                <!-- Inizio right container -->
+                <div id="app_container_right"class="flex">
+
+                    <!-- Inizio chat title -->
+                    <div class="header_right flex center-align">
+                        <div class=" header_title flex center-align">
+                            <img src="img/avatar_2.jpg" alt="">
+                            <div class="flex_h3_h6">
+                                <h3>Nome utente</h3>
+                                <h6>Ultimo accesso oggi alle 15:00 del 20/05/2021</h6>
+                            </div>
+                        </div>
+                        <div class="header_i flex center-align">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>  
+                        </div>  
+                    </div>
+                    <!-- Fine chat title -->
+
+                    <!-- Inizio chat box -->
+                    <div class="chat_box">
+                        <div class="message_one active_one">
+                            <span>Hai portato a spasso il cane?</span>
+                            <span class="time">20/05/2021 15:00</span>
+                        </div>
+                        <div class="message_two active_one">
+                            <span>Ricordati di dargli da mangiare</span>
+                            <span class="time">20/05/2021 15:00</span>
+                        </div>
+                        <div class="message_tree active_two">
+                            <span>Tutto fatto!</span>
+                            <span class="time_tree">20/05/2021 15:00</span>
+                        </div>
+                    </div>
+                    <!-- Fine chat box -->
+
+                    <!-- Inizio message bar -->
+                    <div id="message_bar" class="flex center-align">
+                        <i class="far fa-smile"></i>
+                        <input id="input_message" placeholder="Scrivi un messaggio" type="text">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <!-- Fine message bar -->
+
+                </div>
+                <!-- Fine right container -->
+
+            </div>
+           <!-- // Fine app container -->
+
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

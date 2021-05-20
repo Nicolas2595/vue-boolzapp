@@ -6,11 +6,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+        <style>
+            /* Scrollbar */
+            ::-webkit-scrollbar {
+              width: 8px;
+            }
+            
+            ::-webkit-scrollbar-track {
+              box-shadow: inset 0 0 5px grey; 
+              border-radius: 10px;
+            }
+             
+            ::-webkit-scrollbar-thumb {
+              background: limegreen; 
+              border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+              background: mediumaquamarine; 
+            }
+            /* Fine scrollbar */
+        </style>
         <link rel="stylesheet" href="css/style.css">
         <title>Boolzapp</title>
     </head>
     <body>
-        
+
         <div id="app">
 
             <!-- // Inizio Sfondo -->
@@ -38,8 +59,8 @@
                         <div class="header_i flex center-align">
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
-                            <i class="fas fa-ellipsis-v"></i>  
-                        </div>  
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
                     <!-- Fine header left -->
 
@@ -62,73 +83,26 @@
                     <!-- Fine search -->
 
                     <!-- Inizio contact -->
-                        <div class="people">
-
-                            <div class="contact_chat active">
-            
-                                <img src="img/avatar_1.jpg" alt="Avatar Michele">
-            
-                                <div class="contact_chat_user">
-                                    <h4>Michele</h4>
-                                    <p>Tutto fatto! ...</p>
-                                </div>
-            
-                                <div>
-                                    <p>20/05/2021 15:00</p>
-                                </div>
-            
+                    <div class="people">
+                        <div v-for="(contact,index) in contacts" class="contact"
+                            :class="(contactIndex == index) ? 'active' : ''">
+                            <div class="avatar">
+                                <img :src="getImage(index)" :alt="getAlt(index)">
                             </div>
-            
-                            <div class="contact_chat">
-            
-                                <img src="img/avatar_2.jpg" alt="Avatar Fabio">
-            
-                                <div class="contact_chat_user">
-                                    <h4>Fabio</h4>
-                                    <p>Mi piacerebbe ma devo andare a ...</p>
-                                </div>
-            
-                                <div>
-                                    <p>20/05/2021 15:00</p>
-                                </div>
-            
+                            <div class="data">
+                                <h4>{{ contact.name }}</h4>
+                                <p>status</p>
                             </div>
-            
-                            <div class="contact_chat">
-            
-                                <img src="img/avatar_3.jpg" alt="Avatar Samuele">
-            
-                                <div class="contact_chat_user">
-                                    <h4>Samuele</h4>
-                                    <p>Ah scusa! ...</p>
-                                </div>
-            
-                                <div>
-                                    <p>20/05/2021 15:00</p>
-                                </div>
-            
+                            <div class="time">
+                                <p>20/05/2021 15:00</p>
                             </div>
-                            <div class="contact_chat">
-            
-                                <img src="img/avatar_6.jpg" alt="Avatar Luisa">
-            
-                                <div class="contact_chat_user">
-                                    <h4>Luisa</h4>
-                                    <p>Si, ma preferirei andare al ci ...</p>
-                                </div>
-            
-                                <div>
-                                    <p>20/05/2021 15:00</p>
-                                </div>
-            
-                            </div>
-            
                         </div>
+                    </div>
                     <!-- Fine contact -->
 
-                </div>    
+                </div> 
                 <!-- // Fine left container -->
-                 
+
                 <!-- Inizio right container -->
                 <div id="app_container_right"class="flex">
 
@@ -144,8 +118,8 @@
                         <div class="header_i flex center-align">
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
-                            <i class="fas fa-ellipsis-v"></i>  
-                        </div>  
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
                     <!-- Fine chat title -->
 

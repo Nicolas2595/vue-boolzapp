@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-weight: bold;
 }
 
 .flex {
@@ -12,6 +13,7 @@
     align-items: center;
 }
 
+/* Background */
 #sfondo{
     position: relative;
 }
@@ -26,7 +28,9 @@
     background-color: lightgrey;
     justify-content: center;
 }
+/* Fine background */
 
+/* Inizio app */
 #app_container{
     height: 90vh;
     width: 80vw;
@@ -36,6 +40,7 @@
     transform: translate(-50%, -50%);
 }
 
+/* Inizio left container */
 #app_container_left{
     flex-direction: column;
     height: 100%;
@@ -101,43 +106,36 @@
 }
 
 .people {
-    height: calc(100% - 55px - 60px - 35px);
     overflow-y: auto;
+    background-color: white;
 }
-
-.people .contact_chat {
+.contact {
     display: flex;
-    height: 65px;
-    padding: 7px 10px;
+    position: relative;
+    padding: 10px 15px;
     border-top: 1px solid grey;
 }
 
-.contact_chat.active {
-    background-color: lightgrey;
-}
-
-.contact_chat > img {
-    height: 100%;
-    margin: auto 0;
+.avatar img {
+    height: 50px;
     border-radius: 50%;
-    cursor: pointer;
 }
 
-.contact_chat_user {
-    flex-grow: 1;
-    margin-left: 10px;
+.data {
+    padding: 0 10px;
 }
-
-.contact_chat h4 {
-    font-size: 10px;
-}
-
-.contact_chat p,
-  #chat .section_header p {
+.data p {
     font-size: 10px;
     color: grey;
 }
-  
+
+.time p {
+    font-size: 10px;
+    color: grey;
+}
+/* Fine container left */
+
+/* Inizio container right */
 #app_container_right{
     flex-direction: column;
     height: 100%;
@@ -162,7 +160,6 @@
 }
 
 .message_one {
-    background-color: limegreen;
     width: 300px;
     height: 40px;
     border-radius: 10px;
@@ -236,6 +233,6 @@
     border-radius: 10px;
     border: 0px transparent;
 }
+/* Fine container right */
 
-
-
+/* Fine app */

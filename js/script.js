@@ -86,7 +86,16 @@ var app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        contactIndex: 0
+    },
+    methods: {
+        getImage: function (index) {
+            return "img/" + "avatar" + this.contacts[index].avatar + ".jpg";
+        },
+        getAlt: function (index) {
+            return this.contacts[index].name;
+        }
     }
 
 });

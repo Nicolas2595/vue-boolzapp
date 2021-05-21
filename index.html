@@ -27,6 +27,7 @@
             }
             /* Fine scrollbar */
         </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="css/style.css">
         <title>Boolzapp</title>
     </head>
@@ -139,7 +140,7 @@
                     <!-- Inizio message bar -->
                     <div id="message_bar" class="flex center-align">
                         <i class="far fa-smile"></i>
-                        <input id="input_message" placeholder="Scrivi un messaggio" type="text">
+                        <input v-model="newMessage" @keydown.enter="sendMessage" @keyup.enter="botMessage" id="input_message" placeholder="Scrivi un messaggio" type="text">
                         <i class="fas fa-microphone"></i>
                     </div>
                     <!-- Fine message bar -->

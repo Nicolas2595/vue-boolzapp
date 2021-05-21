@@ -24,6 +24,38 @@ var app = new Vue({
                         status: 'received'
                     }
                 ],
+                random: [
+                    {
+                        date: "",
+                        text: "Ciao",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Non credo di aver capito",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Ah ah ah",
+                        status: "received"
+                    }, 
+                    {
+                        date: "",
+                        text: "Ci sarò",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Giochiamo",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Guardiamo la partita",
+                        status: "received"
+                    },
+                ]
             },
             {
                 name: 'Fabio',
@@ -46,6 +78,38 @@ var app = new Vue({
                         status: 'sent'
                     }
                 ],
+                random: [
+                    {
+                        date: "",
+                        text: "Ciao",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Non credo di aver capito",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Ah ah ah",
+                        status: "received"
+                    }, 
+                    {
+                        date: "",
+                        text: "Ci sarò",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Giochiamo",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Guardiamo la partita",
+                        status: "received"
+                    },
+                ]
             },     
             {
                 name: 'Samuele',
@@ -68,6 +132,38 @@ var app = new Vue({
                         status: 'received'
                     }
                 ],
+                random: [
+                    {
+                        date: "",
+                        text: "Ciao",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Non credo di aver capito",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Ah ah ah",
+                        status: "received"
+                    }, 
+                    {
+                        date: "",
+                        text: "Ci sarò",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Giochiamo",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Guardiamo la partita",
+                        status: "received"
+                    },
+                ]
             },
             {
                 name: 'Luisa',
@@ -85,9 +181,46 @@ var app = new Vue({
                         status: 'received'
                     }
                 ],
+                random: [
+                    {
+                        date: "",
+                        text: "Ciao",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Non credo di aver capito",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Ah ah ah",
+                        status: "received"
+                    }, 
+                    {
+                        date: "",
+                        text: "Ci sarò",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Giochiamo",
+                        status: "received"
+                    },
+                    {
+                        date: "",
+                        text: "Guardiamo la partita",
+                        status: "received"
+                    },
+                ]
             },
         ],
-        contactIndex: 0
+        contactIndex: 0,
+        newMessage: "",
+        newDate: ""
+    },
+    mounted: function () {
+        this.newDate = dayjs().format('DD/MM/YY HH:mm:ss')
     },
     methods: {
         getImage: function (index) {
@@ -102,7 +235,29 @@ var app = new Vue({
         getLast: function (contact) {
             let lastMessage = contact.messages.length - 1;
             return contact.messages[lastMessage];
-        }
+        },
+        sendMessage: function () {
+            if (this.newMessage.trim().length > 0) {
+                this.contacts[this.contactIndex].messages.push({
+                    date: this.newDate,
+                    text: this.newMessage,
+                    status: 'sent'
+                })
+            }
+            this.newMessage = "";
+        },
+        getRandomAnswer: function () {
+            const randomAnswer = this.contacts[this.contactIndex].random[Math.floor((Math.random() * (5 - 0 + 1)) + 0)].text;
+
+            let x = this.contacts[this.contactIndex].messages.push({date: dayjs().format('DD/MM/YY HH:mm:ss'),text: randomAnswer, status:'received'});
+            return x;
+        },
+        botMessage: function() {
+            let x = this
+           setTimeout(function(){ 
+               x.getRandomAnswer();
+           }, 1000);
+       },
     }
 
 });

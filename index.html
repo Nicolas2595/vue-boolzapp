@@ -18,12 +18,12 @@
             }
              
             ::-webkit-scrollbar-thumb {
-              background: limegreen; 
+              background: grey; 
               border-radius: 10px;
             }
             
             ::-webkit-scrollbar-thumb:hover {
-              background: mediumaquamarine; 
+              background: #d5f9ba; 
             }
             /* Fine scrollbar */
         </style>
@@ -54,7 +54,7 @@
                     <div class="header_left flex center-align">
                         <div class=" header_title flex center-align">
                             <img src="img/avatar_1.jpg" alt="">
-                            <h3>Nome utente</h3>
+                            <h3>Nicolas Morelli</h3>
                         </div>
                         <div class="header_i flex center-align">
                             <i class="fas fa-circle-notch"></i>
@@ -85,16 +85,16 @@
                     <!-- Inizio contact -->
                     <div class="people">
                         <div v-for="(contact,index) in contacts" class="contact"
-                            :class="(contactIndex == index) ? 'active' : ''">
+                            :class="(contactIndex == index) ? 'active' : '' " @click="getContact(index)">
                             <div class="avatar">
                                 <img :src="getImage(index)" :alt="getAlt(index)">
                             </div>
                             <div class="data">
                                 <h4>{{ contact.name }}</h4>
-                                <p>status</p>
+                                <p>{{ getLast(contact).text }}...</p>
                             </div>
                             <div class="time">
-                                <p>20/05/2021 15:00</p>
+                                <p>{{ getLast(contact).date }}</p>
                             </div>
                         </div>
                     </div>
@@ -107,12 +107,12 @@
                 <div id="app_container_right"class="flex">
 
                     <!-- Inizio chat title -->
-                    <div class="header_right flex center-align">
+                    <div v-for="(contact, index) in contacts" v-if="(contactIndex == index)" class="header_right flex center-align">
                         <div class=" header_title flex center-align">
-                            <img src="img/avatar_2.jpg" alt="">
+                            <img :src="getImage(index)" alt="Michele">
                             <div class="flex_h3_h6">
-                                <h3>Nome utente</h3>
-                                <h6>Ultimo accesso oggi alle 15:00 del 20/05/2021</h6>
+                                <h3>{{ contact.name}}</h3>
+                                <h6>Ultimo accesso oggi alle {{ getLast(contact).date }}</h6>
                             </div>
                         </div>
                         <div class="header_i flex center-align">
@@ -127,11 +127,11 @@
                     <div class="chat_box">
                         <div class="message_one active_one">
                             <span>Hai portato a spasso il cane?</span>
-                            <span class="time">20/05/2021 15:00</span>
+                            <span class="time_one">20/05/2021 15:00</span>
                         </div>
                         <div class="message_two active_one">
                             <span>Ricordati di dargli da mangiare</span>
-                            <span class="time">20/05/2021 15:00</span>
+                            <span class="time_one">20/05/2021 15:00</span>
                         </div>
                         <div class="message_tree active_two">
                             <span>Tutto fatto!</span>

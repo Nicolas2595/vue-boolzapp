@@ -13,6 +13,10 @@
     align-items: center;
 }
 
+.active {
+    background-color: #E9EBEB;
+}
+
 /* Background */
 #sfondo{
     position: relative;
@@ -20,7 +24,7 @@
 
 #top_green{
     height: 20vh;
-    background-color: mediumseagreen;
+    background-color: #009688;
 }
 
 #background{
@@ -70,9 +74,20 @@
 }
 
 #app_notification_left {
-    background-color: dodgerblue;
+    background-color: #8edafc;
     justify-content: center;
     height: 15%;
+    position: relative;
+}
+
+.notification_i {
+    position: absolute;
+    left: 10px;
+}
+
+.notification_a {
+    position: absolute;
+    left: 50px;
 }
 
 .notification_i > i {
@@ -82,17 +97,18 @@
     height: 30px;
     line-height: 30px;
     text-align: center;
-    color: dodgerblue;
+    color: #8edafc;
     margin-right: 10px;
 }
 
 .notification_a > a {
-    color: black;
+    color: grey;
+    font-size: 12px;
 }
 
 #app_search_left {
     height: 10%;
-    background-color: cornsilk;
+    background-color: f3eeea;
     justify-content: center;
 }
 
@@ -101,7 +117,7 @@
     height: 50%;
     text-align: center;
     color: grey;
-    border: 1px solid transparent;
+    border: 1px solid grey;
     border-radius: 5px;
 }
 
@@ -114,6 +130,7 @@
     position: relative;
     padding: 10px 15px;
     border-top: 1px solid grey;
+    cursor: pointer;
 }
 
 .avatar img {
@@ -175,7 +192,7 @@
     font-size: 10px;
     position: absolute;
     right: 0;
-    bottom: -10px;
+    /* bottom: -10px; */
 }
 
 .message_two {
@@ -202,6 +219,13 @@
     left: 50px;
 }
 
+.time_one {
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+}
+
 .time_tree {
     font-size: 10px;
     position: absolute;
@@ -210,7 +234,7 @@
 }
 
 .active_one {
-    background-color: limegreen;
+    background-color: #d5f9ba;
 }
 .active_two {
     background-color: white;
@@ -218,7 +242,7 @@
 
 #message_bar {
     height: 10%;
-    background-color: cornsilk;
+    background-color: #f3eeea;
     justify-content: space-around;
 }
 

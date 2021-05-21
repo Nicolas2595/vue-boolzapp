@@ -146,6 +146,12 @@
     color: grey;
 }
 
+.time {
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+}
+
 .time p {
     font-size: 10px;
     color: grey;
@@ -173,71 +179,43 @@
     height: 80%;
     background-image: url(../img/mine.jpg);
     overflow-y: auto;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
 }
 
-.message_one {
-    width: 300px;
-    height: 40px;
+.chat_box span:first-child {
+    font-size: 12px;
+} 
+
+.message {
+    flex-direction: column;
+    width: 200px;
     border-radius: 10px;
-    line-height: 40px;
-    padding-left: 10px;
-    position: relative;
-    position: absolute;
-    right: 50px;
-    top: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
-.time {
-    font-size: 10px;
-    position: absolute;
-    right: 0;
-    /* bottom: -10px; */
+.message_send {
+    background-color: #d5f9ba;
+    align-self: flex-end;
 }
 
-.message_two {
-    width: 300px;
-    height: 40px;
-    border-radius: 10px;
-    line-height: 40px;
-    padding-left: 10px;
-    position: relative;
-    position: absolute;
-    right: 50px;
-    top: 100px;
+.message_recived {
+    background-color: white;
 }
 
-.message_tree {
-    width: 300px;
-    height: 40px;
-    border-radius: 10px;
-    line-height: 40px;
-    padding-left: 10px;
+.container_text {
     position: relative;
-    position: absolute;
-    top: 200px;
-    left: 50px;
+
 }
 
 .time_one {
-    font-size: 10px;
+    font-size: 8px;
     position: absolute;
     right: 0;
     bottom: -10px;
-}
-
-.time_tree {
-    font-size: 10px;
-    position: absolute;
-    right: 0;
-    bottom: -10px;
-}
-
-.active_one {
-    background-color: #d5f9ba;
-}
-.active_two {
-    background-color: white;
 }
 
 #message_bar {

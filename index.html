@@ -125,17 +125,13 @@
 
                     <!-- Inizio chat box -->
                     <div class="chat_box">
-                        <div class="message_one active_one">
-                            <span>Hai portato a spasso il cane?</span>
-                            <span class="time_one">20/05/2021 15:00</span>
-                        </div>
-                        <div class="message_two active_one">
-                            <span>Ricordati di dargli da mangiare</span>
-                            <span class="time_one">20/05/2021 15:00</span>
-                        </div>
-                        <div class="message_tree active_two">
-                            <span>Tutto fatto!</span>
-                            <span class="time_tree">20/05/2021 15:00</span>
+                        <div v-for="message in contacts[contactIndex].  messages" class="message flex" :class="(message.status == 'sent') ? 'message_send' : 'message_recived'">
+
+                            <div class="container_text flex">
+                                <span>{{ message.text }}</span>
+                                <span class="time_one">{{ message.date }}</span>
+                            </div>
+                            
                         </div>
                     </div>
                     <!-- Fine chat box -->

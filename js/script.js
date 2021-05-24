@@ -217,7 +217,8 @@ var app = new Vue({
         ],
         contactIndex: 0,
         newMessage: "",
-        newDate: ""
+        newDate: "",
+        
     },
     mounted: function () {
         this.newDate = dayjs().format('DD/MM/YY HH:mm:ss')
@@ -258,6 +259,7 @@ var app = new Vue({
                x.getRandomAnswer();
            }, 1000);
        },
+      
     }
 
 });

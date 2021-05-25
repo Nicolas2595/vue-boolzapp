@@ -191,7 +191,7 @@
 
 .message {
     flex-direction: column;
-    width: 200px;
+    width: 250px;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
@@ -209,6 +209,19 @@
 .container_text {
     position: relative;
 
+}
+
+.container_text i {
+    font-size: 13px;
+    position: absolute;
+    right: 0;
+    color: red;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.container_text:hover i {
+    visibility: visible;
 }
 
 .time_one {

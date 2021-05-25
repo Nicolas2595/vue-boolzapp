@@ -234,9 +234,27 @@ var app = new Vue({
         getContact: function (index) {
             return this.contactIndex = index;
         },
+        getLastText: function(contact) {
+            if (contact.messages.length > 0) {
+                let lastMessage = contact.messages.length - 1;
+                return contact.messages[lastMessage].text;
+            } else {
+                return "";
+            }
+        },
+        getLastDate: function(contact) {
+            if (contact.messages.length > 0) {
+                let lastMessage = contact.messages.length - 1;
+                return contact.messages[lastMessage].date;
+            } else {
+                return "";
+            }
+        },
         getLast: function (contact) {
-            let lastMessage = contact.messages.length - 1;
-            return contact.messages[lastMessage];
+            if (contact.messages.length > 0) {
+                let lastMessage = contact.messages.length - 1;
+                return contact.messages[lastMessage];
+            }
         },
         sendMessage: function () {
             if (this.newMessage.trim().length > 0) {
@@ -270,8 +288,11 @@ var app = new Vue({
                 }
             }
         );
-        return this.newSearch = "";
-    }
+            return this.newSearch = "";
+        },
+        remove: function(deleteIndex) {
+            this.contacts[this.contactIndex].messages.splice(deleteIndex, 1);
+        }
       
     }
 

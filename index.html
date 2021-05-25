@@ -81,14 +81,14 @@
 
                     <!-- Inizio search -->
                     <div id="app_search_left" class="flex center-align">
-                        <input id="input_search"  type="text" placeholder="🔎 Cerca o inizia una nuova chat">
+                        <input v-model="newSearch" id="input_search" @change="searchContact" type="text" placeholder="🔎 Cerca o inizia una nuova chat">
                     </div>
                     <!-- Fine search -->
 
                     <!-- Inizio contact -->
                     <div class="people">
                         <div v-for="(contact,index) in contacts" class="contact"
-                            :class="(contactIndex == index) ? 'active' : '' " @click="getContact(index)">
+                            :class="{'active' : (contactIndex == index), 'none' : (contact.visible == false)}" @click="getContact(index)">
                             <div class="avatar">
                                 <img :src="getImage(index)" :alt="getAlt(index)">
                             </div>

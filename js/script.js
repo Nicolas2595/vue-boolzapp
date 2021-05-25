@@ -218,6 +218,7 @@ var app = new Vue({
         contactIndex: 0,
         newMessage: "",
         newDate: "",
+        newSearch: ""
         
     },
     mounted: function () {
@@ -259,6 +260,18 @@ var app = new Vue({
                x.getRandomAnswer();
            }, 1000);
        },
+       searchContact: function () {
+        this.contacts.forEach(
+            contact => {
+                if (contact.name.toLowerCase().includes(this.newSearch.toLowerCase())) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false
+                }
+            }
+        );
+        return this.newSearch = "";
+    }
       
     }
 
